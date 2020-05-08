@@ -1,0 +1,29 @@
+### Oracle相关
+sqlplus /nolog
+create tablespace iRecall datafile 'C:\app\iRecall\iRecall.dbf' size 3000m;
+create user iRecall_test identified by root default tablespace iRecall;
+grant dba, connect to iRecall_test;
+conn iRecall_test
+root
+
+#### 监听相关
+lsnrctl stop 关闭监听
+lsnrctl start 启动监听
+C:\app\Administrator\product\11.2.0\dbhome_1\NETWORK\ADMIN
+
+### 数据库连接信息
+iRecall_test
+root
+127.0.0.1:1521/ORCL
+47.112.4.224:1521/ORCL
+
+### Mysql导入1
+"D:\tools\MYSQL\mysql-5.1.57-win32\bin\mysql.exe" -u root -padmin
+CREATE DATABASE tmall_springboot DEFAULT CHARACTER SET utf8;
+"D:\tools\MYSQL\mysql-5.1.57-win32\bin\mysql.exe" -u root -padmin --default-character-set=utf8 tmall_springboot < d:\tmall_springboot.sql
+
+### Mysql导入2
+进入MYSQL后
+mysql>use test;
+mysql> source C:/Users/Administrator/Desktop/tmall_springboot.sql
+
